@@ -62,12 +62,8 @@ function generateSVG(data, days) {
   const totalHeight = HEADER_HEIGHT + gridHeight + FOOTER_HEIGHT;
 
   let cells = '';
-  const dataDates = Object.keys(data.daily_usage || {}).sort();
-  const currentUtcDate = new Date().toISOString().split('T')[0];
-  const endDate = dataDates.length
-    ? [currentUtcDate, dataDates[dataDates.length - 1]].sort().pop()
-    : currentUtcDate;
-  const today = new Date(endDate + 'T00:00:00Z');
+  const today = new Date();
+  today.setUTCHours(0, 0, 0, 0);
   const startDate = new Date(today);
   startDate.setUTCDate(startDate.getUTCDate() - days);
   while (startDate.getUTCDay() !== 0) startDate.setUTCDate(startDate.getUTCDate() - 1);
