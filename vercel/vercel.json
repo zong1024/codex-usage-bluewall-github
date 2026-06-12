@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "pages/api/**/*.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "pages/**/*.tsx",
+      "use": "@vercel/next"
+    }
+  ],
+  "env": {
+    "GITHUB_USERNAME": "zongrui",
+    "GITHUB_REPO": "codex-usage-bluewall-github"
+  }
+}

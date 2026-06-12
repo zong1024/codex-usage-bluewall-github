@@ -1,0 +1,44 @@
+# Codex raw data (never upload)
+~/.codex/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.jsonl
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+tmp/
+
+# Config with potential secrets
+config.json
+config.multi-device.json
+
+# Keep aggregated data
+!data/ai-usage.json
+!data/codex-usage.json
+!assets/*.svg
+
+# Vercel
+vercel/node_modules/
+vercel/.next/
+vercel/.vercel/

@@ -1,0 +1,140 @@
+{
+  "generated_at": "2026-06-12T23:08:04.787569",
+  "tools_scanned": [
+    "codex",
+    "claude_code",
+    "mimocode"
+  ],
+  "per_tool_summary": {
+    "codex": 173990902,
+    "claude_code": 1008180,
+    "mimocode": 0
+  },
+  "statistics": {
+    "total_tokens": 174999082,
+    "peak_day": "2026-06-07",
+    "peak_tokens": 91219057,
+    "current_streak": 1,
+    "longest_streak": 6,
+    "total_days_active": 14
+  },
+  "daily_usage": {
+    "2026-06-09": {
+      "input_tokens": 1540545,
+      "output_tokens": 492093,
+      "total_tokens": 2032638,
+      "tools": {
+        "codex": 1573023,
+        "claude_code": 459615
+      }
+    },
+    "2026-06-08": {
+      "input_tokens": 7078004,
+      "output_tokens": 3010689,
+      "total_tokens": 10088693,
+      "tools": {
+        "codex": 9991015,
+        "claude_code": 97678
+      }
+    },
+    "2026-06-07": {
+      "input_tokens": 63866414,
+      "output_tokens": 27352643,
+      "total_tokens": 91219057,
+      "tools": {
+        "codex": 91161135,
+        "claude_code": 57922
+      }
+    },
+    "2026-06-06": {
+      "input_tokens": 13471277,
+      "output_tokens": 5756987,
+      "total_tokens": 19228264,
+      "tools": {
+        "codex": 18961721,
+        "claude_code": 266543
+      }
+    },
+    "2026-06-05": {
+      "input_tokens": 229969,
+      "output_tokens": 90098,
+      "total_tokens": 320067,
+      "tools": {
+        "codex": 298725,
+        "claude_code": 21342
+      }
+    },
+    "2026-06-02": {
+      "input_tokens": 351109,
+      "output_tokens": 150476,
+      "total_tokens": 501585,
+      "tools": {
+        "codex": 501585
+      }
+    },
+    "2026-05-30": {
+      "input_tokens": 508258,
+      "output_tokens": 217825,
+      "total_tokens": 726083,
+      "tools": {
+        "codex": 726083
+      }
+    },
+    "2026-05-29": {
+      "input_tokens": 28806043,
+      "output_tokens": 12345447,
+      "total_tokens": 41151490,
+      "tools": {
+        "codex": 41151490
+      }
+    },
+    "2026-05-28": {
+      "input_tokens": 50430,
+      "output_tokens": 21614,
+      "total_tokens": 72044,
+      "tools": {
+        "codex": 72044
+      }
+    },
+    "2026-05-27": {
+      "input_tokens": 416640,
+      "output_tokens": 178562,
+      "total_tokens": 595202,
+      "tools": {
+        "codex": 595202
+      }
+    },
+    "2026-05-26": {
+      "input_tokens": 1217482,
+      "output_tokens": 521778,
+      "total_tokens": 1739260,
+      "tools": {
+        "codex": 1739260
+      }
+    },
+    "2026-05-24": {
+      "input_tokens": 5053730,
+      "output_tokens": 2165889,
+      "total_tokens": 7219619,
+      "tools": {
+        "codex": 7219619
+      }
+    },
+    "2026-06-10": {
+      "input_tokens": 98678,
+      "output_tokens": 3542,
+      "total_tokens": 102220,
+      "tools": {
+        "claude_code": 102220
+      }
+    },
+    "2026-06-12": {
+      "input_tokens": 2539,
+      "output_tokens": 321,
+      "total_tokens": 2860,
+      "tools": {
+        "claude_code": 2860
+      }
+    }
+  }
+}
