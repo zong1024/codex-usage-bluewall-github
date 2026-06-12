@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-06-13T00:44:03.810748+08:00",
+  "generated_at": "2026-06-13T01:22:27.133203+08:00",
   "device": "ZONGRUICHD",
   "tools_scanned": [
     "codex",
@@ -10,15 +10,15 @@
     "hermes"
   ],
   "per_tool_summary": {
-    "codex": 179317241,
+    "codex": 550471223,
     "claude_code": 11511872,
     "mimocode": 115204733,
     "opencode": 0,
     "hermes": 0
   },
   "per_agent_summary": {
-    "codex:cli": 53596676,
-    "codex:vscode": 125720565,
+    "codex:cli": 138173314,
+    "codex:vscode": 412297909,
     "claude_code:main": 11278004,
     "claude_code:a5719ee4e9704233b": 233868,
     "mimocode:main": 106626089,
@@ -47,28 +47,28 @@
     }
   },
   "statistics": {
-    "total_tokens": 306033846,
-    "peak_day": "2026-06-12",
-    "peak_tokens": 91893121,
+    "total_tokens": 677187828,
+    "peak_day": "2026-06-08",
+    "peak_tokens": 289450743,
     "current_streak": 9,
     "longest_streak": 10,
     "total_days_active": 19
   },
   "daily_usage": {
     "2026-06-13": {
-      "input_tokens": 5980049,
-      "output_tokens": 50674,
-      "cache_read_tokens": 19886592,
+      "input_tokens": 23695119,
+      "output_tokens": 86019,
+      "cache_read_tokens": 42271872,
       "cache_write_tokens": 0,
-      "reasoning_tokens": 10882,
-      "total_tokens": 25919489,
-      "sessions": 128,
+      "reasoning_tokens": 22455,
+      "total_tokens": 66075465,
+      "sessions": 230,
       "tools": {
-        "codex": 5326339,
+        "codex": 45482315,
         "mimocode": 20593150
       },
       "agents": {
-        "codex:cli": 5326339,
+        "codex:cli": 45482315,
         "mimocode:main": 19133579,
         "mimocode:checkpoint-writer-1": 1459571
       }
@@ -76,36 +76,36 @@
     "2026-06-09": {
       "input_tokens": 6992460,
       "output_tokens": 51860,
-      "cache_read_tokens": 2213312,
+      "cache_read_tokens": 8134592,
       "cache_write_tokens": 0,
       "reasoning_tokens": 7185,
-      "total_tokens": 9257632,
+      "total_tokens": 15186097,
       "sessions": 156,
       "tools": {
-        "codex": 6584705,
+        "codex": 12513170,
         "claude_code": 2672927
       },
       "agents": {
-        "codex:cli": 1573023,
-        "codex:vscode": 5011682,
+        "codex:cli": 3031945,
+        "codex:vscode": 9481225,
         "claude_code:main": 2672927
       }
     },
     "2026-06-08": {
-      "input_tokens": 61329993,
-      "output_tokens": 334386,
-      "cache_read_tokens": 1874112,
+      "input_tokens": 146402669,
+      "output_tokens": 739770,
+      "cache_read_tokens": 142065472,
       "cache_write_tokens": 0,
-      "reasoning_tokens": 130344,
-      "total_tokens": 63538721,
-      "sessions": 585,
+      "reasoning_tokens": 242832,
+      "total_tokens": 289450743,
+      "sessions": 617,
       "tools": {
-        "codex": 61500021,
+        "codex": 287412043,
         "claude_code": 2038700
       },
       "agents": {
-        "codex:vscode": 51624276,
-        "codex:cli": 9875745,
+        "codex:vscode": 268274768,
+        "codex:cli": 19137275,
         "claude_code:main": 1804832,
         "claude_code:a5719ee4e9704233b": 233868
       }
@@ -113,203 +113,203 @@
     "2026-06-07": {
       "input_tokens": 34624587,
       "output_tokens": 233435,
-      "cache_read_tokens": 5608832,
+      "cache_read_tokens": 37681920,
       "cache_write_tokens": 0,
       "reasoning_tokens": 97429,
-      "total_tokens": 40466854,
+      "total_tokens": 72637371,
       "sessions": 522,
       "tools": {
-        "codex": 34640447,
+        "codex": 66810964,
         "claude_code": 5826407
       },
       "agents": {
-        "codex:vscode": 5910851,
-        "codex:cli": 28729596,
+        "codex:vscode": 11420751,
+        "codex:cli": 55390213,
         "claude_code:main": 5826407
       }
     },
     "2026-06-06": {
       "input_tokens": 18972731,
       "output_tokens": 63862,
-      "cache_read_tokens": 125632,
+      "cache_read_tokens": 18762304,
       "cache_write_tokens": 0,
       "reasoning_tokens": 9232,
-      "total_tokens": 19162225,
+      "total_tokens": 37808129,
       "sessions": 183,
       "tools": {
-        "codex": 18961721,
+        "codex": 37607625,
         "claude_code": 200504
       },
       "agents": {
-        "codex:vscode": 18961721,
+        "codex:vscode": 37607625,
         "claude_code:main": 200504
       }
     },
     "2026-06-05": {
       "input_tokens": 316782,
       "output_tokens": 3285,
-      "cache_read_tokens": 82176,
+      "cache_read_tokens": 328192,
       "cache_write_tokens": 0,
       "reasoning_tokens": 426,
-      "total_tokens": 402243,
+      "total_tokens": 648685,
       "sessions": 19,
       "tools": {
-        "codex": 298725,
+        "codex": 545167,
         "claude_code": 103518
       },
       "agents": {
-        "codex:cli": 298725,
+        "codex:cli": 545167,
         "claude_code:main": 103518
       }
     },
     "2026-06-02": {
       "input_tokens": 493738,
       "output_tokens": 7847,
-      "cache_read_tokens": 0,
+      "cache_read_tokens": 406912,
       "cache_write_tokens": 0,
       "reasoning_tokens": 4567,
-      "total_tokens": 501585,
+      "total_tokens": 913064,
       "sessions": 17,
       "tools": {
-        "codex": 501585
+        "codex": 913064
       },
       "agents": {
-        "codex:cli": 501585
+        "codex:cli": 913064
       }
     },
     "2026-05-30": {
       "input_tokens": 18371442,
       "output_tokens": 57321,
-      "cache_read_tokens": 0,
+      "cache_read_tokens": 17404416,
       "cache_write_tokens": 0,
       "reasoning_tokens": 24343,
-      "total_tokens": 18428763,
+      "total_tokens": 35857522,
       "sessions": 148,
       "tools": {
-        "codex": 18428763
+        "codex": 35857522
       },
       "agents": {
-        "codex:vscode": 18428763
+        "codex:vscode": 35857522
       }
     },
     "2026-05-29": {
       "input_tokens": 102958,
       "output_tokens": 1079,
-      "cache_read_tokens": 0,
+      "cache_read_tokens": 85376,
       "cache_write_tokens": 0,
       "reasoning_tokens": 33,
-      "total_tokens": 104037,
+      "total_tokens": 189446,
       "sessions": 5,
       "tools": {
-        "codex": 104037
+        "codex": 189446
       },
       "agents": {
-        "codex:vscode": 104037
+        "codex:vscode": 189446
       }
     },
     "2026-05-31": {
       "input_tokens": 14804676,
       "output_tokens": 35861,
-      "cache_read_tokens": 0,
+      "cache_read_tokens": 13928320,
       "cache_write_tokens": 0,
       "reasoning_tokens": 15647,
-      "total_tokens": 14840537,
+      "total_tokens": 28784504,
       "sessions": 101,
       "tools": {
-        "codex": 14840537
+        "codex": 28784504
       },
       "agents": {
-        "codex:vscode": 14840537
+        "codex:vscode": 28784504
       }
     },
     "2026-06-01": {
       "input_tokens": 8474090,
       "output_tokens": 30146,
-      "cache_read_tokens": 0,
+      "cache_read_tokens": 7740672,
       "cache_write_tokens": 0,
       "reasoning_tokens": 15257,
-      "total_tokens": 8504236,
+      "total_tokens": 16260165,
       "sessions": 82,
       "tools": {
-        "codex": 8504236
+        "codex": 16260165
       },
       "agents": {
-        "codex:vscode": 8504236
+        "codex:vscode": 16260165
       }
     },
     "2026-05-28": {
       "input_tokens": 70903,
       "output_tokens": 1141,
-      "cache_read_tokens": 0,
+      "cache_read_tokens": 43520,
       "cache_write_tokens": 0,
       "reasoning_tokens": 136,
-      "total_tokens": 72044,
+      "total_tokens": 115700,
       "sessions": 4,
       "tools": {
-        "codex": 72044
+        "codex": 115700
       },
       "agents": {
-        "codex:cli": 72044
+        "codex:cli": 115700
       }
     },
     "2026-05-27": {
       "input_tokens": 588137,
       "output_tokens": 7065,
-      "cache_read_tokens": 0,
+      "cache_read_tokens": 510208,
       "cache_write_tokens": 0,
       "reasoning_tokens": 1844,
-      "total_tokens": 595202,
+      "total_tokens": 1107254,
       "sessions": 22,
       "tools": {
-        "codex": 595202
+        "codex": 1107254
       },
       "agents": {
-        "codex:vscode": 595202
+        "codex:vscode": 1107254
       }
     },
     "2026-05-26": {
       "input_tokens": 1725284,
       "output_tokens": 13976,
-      "cache_read_tokens": 0,
+      "cache_read_tokens": 1570176,
       "cache_write_tokens": 0,
       "reasoning_tokens": 5213,
-      "total_tokens": 1739260,
+      "total_tokens": 3314649,
       "sessions": 49,
       "tools": {
-        "codex": 1739260
+        "codex": 3314649
       },
       "agents": {
-        "codex:vscode": 1739260
+        "codex:vscode": 3314649
       }
     },
     "2026-05-24": {
       "input_tokens": 5056196,
       "output_tokens": 43269,
-      "cache_read_tokens": 0,
+      "cache_read_tokens": 4398592,
       "cache_write_tokens": 0,
       "reasoning_tokens": 14859,
-      "total_tokens": 5099465,
+      "total_tokens": 9512916,
       "sessions": 136,
       "tools": {
-        "codex": 5099465
+        "codex": 9512916
       },
       "agents": {
-        "codex:cli": 5099465
+        "codex:cli": 9512916
       }
     },
     "2026-05-25": {
       "input_tokens": 2113185,
       "output_tokens": 6969,
-      "cache_read_tokens": 0,
+      "cache_read_tokens": 1921920,
       "cache_write_tokens": 0,
       "reasoning_tokens": 2645,
-      "total_tokens": 2120154,
+      "total_tokens": 4044719,
       "sessions": 21,
       "tools": {
-        "codex": 2120154
+        "codex": 4044719
       },
       "agents": {
-        "codex:cli": 2120154
+        "codex:cli": 4044719
       }
     },
     "2026-06-10": {

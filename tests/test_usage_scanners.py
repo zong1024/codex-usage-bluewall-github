@@ -117,6 +117,72 @@ class UsageScannerTests(unittest.TestCase):
         self.assertEqual(sum(day["total_tokens"] for day in result.daily.values()), 150)
         self.assertEqual(result.agents["cli"], 150)
 
+    def test_codex_matches_desktop_token_accounting_and_counter_resets(self):
+        rollout = self.root / "rollout.jsonl"
+        events = []
+        for usage in (
+            {
+                "input_tokens": 80,
+                "cached_input_tokens": 50,
+                "output_tokens": 20,
+                "reasoning_output_tokens": 5,
+                "total_tokens": 100,
+            },
+            {
+                "input_tokens": 120,
+                "cached_input_tokens": 70,
+                "output_tokens": 30,
+                "reasoning_output_tokens": 8,
+                "total_tokens": 150,
+            },
+            {
+                "input_tokens": 40,
+                "cached_input_tokens": 20,
+                "output_tokens": 10,
+                "reasoning_output_tokens": 2,
+                "total_tokens": 50,
+            },
+        ):
+            events.append(
+                {
+                    "timestamp": self.iso_now,
+                    "payload": {
+                        "type": "token_count",
+                        "info": {"total_token_usage": usage},
+                    },
+                }
+            )
+        rollout.write_text("\n".join(json.dumps(event) for event in events))
+
+        db_path = self.root / "state.sqlite"
+        connection = sqlite3.connect(db_path)
+        connection.execute(
+            """
+            CREATE TABLE threads (
+                id TEXT PRIMARY KEY,
+                rollout_path TEXT,
+                created_at INTEGER,
+                updated_at INTEGER,
+                tokens_used INTEGER,
+                source TEXT
+            )
+            """
+        )
+        connection.execute(
+            "INSERT INTO threads VALUES (?, ?, ?, ?, ?, ?)",
+            ("thread-1", str(rollout), self.epoch, self.epoch, 200, "cli"),
+        )
+        connection.commit()
+        connection.close()
+
+        result = scan_codex(30, db_path)
+        usage = next(iter(result.daily.values()))
+        self.assertEqual(usage["input_tokens"], 160)
+        self.assertEqual(usage["cache_read_tokens"], 90)
+        self.assertEqual(usage["output_tokens"], 40)
+        self.assertEqual(usage["reasoning_tokens"], 10)
+        self.assertEqual(usage["total_tokens"], 300)
+
     def test_mimocode_counts_subagents_and_excludes_claude_imports(self):
         db_path, connection = self.create_message_db("mimocode.db")
         connection.execute(

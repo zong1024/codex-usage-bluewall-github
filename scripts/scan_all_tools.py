@@ -171,11 +171,32 @@ def codex_cumulative_usage(payload: Any) -> Optional[Dict[str, int]]:
     if not isinstance(info, dict):
         return None
     usage = info.get("total_token_usage")
-    return parsed_usage(
-        usage,
-        cache_is_additional=False,
-        reasoning_is_additional=False,
+    if not isinstance(usage, dict):
+        return None
+
+    input_tokens = number(usage.get("input_tokens"))
+    output_tokens = number(usage.get("output_tokens"))
+    cache_read_tokens = number(
+        usage.get("cached_input_tokens", usage.get("cache_read_input_tokens"))
     )
+    reasoning_tokens = number(
+        usage.get("reasoning_output_tokens", usage.get("reasoning_tokens"))
+    )
+    total_tokens = (
+        input_tokens + cache_read_tokens + output_tokens + reasoning_tokens
+    )
+    if total_tokens <= 0:
+        return None
+
+    return {
+        "input_tokens": input_tokens,
+        "output_tokens": output_tokens,
+        "cache_read_tokens": cache_read_tokens,
+        "cache_write_tokens": 0,
+        "reasoning_tokens": reasoning_tokens,
+        "total_tokens": total_tokens,
+        "sessions": 1,
+    }
 
 
 def scan_codex(days: int = 365, db_path: Optional[Path] = None) -> ScanResult:
@@ -210,7 +231,7 @@ def scan_codex(days: int = 365, db_path: Optional[Path] = None) -> ScanResult:
                 break
 
         event_count = 0
-        high_water = empty_usage()
+        previous_usage = empty_usage()
         rollout_path = Path(row["rollout_path"]) if row["rollout_path"] else None
         if rollout_path and rollout_path.exists():
             try:
@@ -223,17 +244,23 @@ def scan_codex(days: int = 365, db_path: Optional[Path] = None) -> ScanResult:
                         cumulative = codex_cumulative_usage(record.get("payload"))
                         date_str = local_date(record.get("timestamp"))
                         if cumulative:
+                            # Codex can restart cumulative counters after a context
+                            # compaction. Treat a lower total as a fresh counter.
+                            if (
+                                cumulative["total_tokens"]
+                                < previous_usage["total_tokens"]
+                            ):
+                                previous_usage = empty_usage()
                             usage = {
                                 field: max(
                                     0,
-                                    cumulative.get(field, 0) - high_water.get(field, 0),
+                                    cumulative.get(field, 0)
+                                    - previous_usage.get(field, 0),
                                 )
                                 for field in USAGE_FIELDS
                             }
                             for field in USAGE_FIELDS:
-                                high_water[field] = max(
-                                    high_water[field], cumulative.get(field, 0)
-                                )
+                                previous_usage[field] = cumulative.get(field, 0)
                             usage["sessions"] = 1
                             if (
                                 usage["total_tokens"] <= 0
