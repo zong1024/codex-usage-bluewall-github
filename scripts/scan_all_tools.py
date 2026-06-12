@@ -640,7 +640,9 @@ def main() -> None:
     output = build_output(tool_data, merged_data, statistics, args.device_name)
     output_path = expand_path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8")
+    with output_path.open("w", encoding="utf-8", newline="\n") as handle:
+        json.dump(output, handle, indent=2, ensure_ascii=False)
+        handle.write("\n")
 
     print(f"Saved usage data to {output_path}")
     for tool, total in output["per_tool_summary"].items():
