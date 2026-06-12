@@ -1,0 +1,7 @@
+{
+  "outputDirectory": "vercel/.next",
+  "env": {
+    "GITHUB_USERNAME": "zong1024",
+    "GITHUB_REPO": "codex-usage-bluewall-github"
+  }
+}

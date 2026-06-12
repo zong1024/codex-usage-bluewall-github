@@ -1,0 +1,9 @@
+{
+  "name": "codex-usage-bluewall-github",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd vercel && npm run build",
+    "vercel-build": "cd vercel && npm run build"
+  }
+}
