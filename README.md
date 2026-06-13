@@ -160,6 +160,11 @@ Edit `config.json`:
 - Git
 - Vercel account (free)
 
+## Maintainer Documentation
+
+See [AI_HANDOFF.md](AI_HANDOFF.md) for the current architecture, data model,
+production deployment details, known limitations, and verification checklist.
+
 ## License
 
 MIT
